@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import Dropdown from "react-dropdown";
-import parse from "html-react-parser";
+import React, { useState, useEffect } from 'react';
+import Dropdown from 'react-dropdown';
+import parse from 'html-react-parser';
 
-import { formatSeasons } from "./utils/formatSeasons";
+import { formatSeasons } from './utils/formatSeasons';
 
-import Episodes from "./components/Episodes";
-import { fetchShow } from "./api/fetchShow";
+import Episodes from './components/Episodes';
+import { fetchShow } from './api/fetchShow';
 
-import "./styles.css";
+import './styles.css';
 
 export default function App() {
   const [show, setShow] = useState(null);
   const [seasons, setSeasons] = useState([]);
-  const [selectedSeason, setSelectedSeason] = useState("");
+  const [selectedSeason, setSelectedSeason] = useState('');
   const episodes = seasons[selectedSeason] || [];
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function App() {
       <Dropdown
         options={Object.keys(seasons)}
         onChange={handleSelect}
-        value={selectedSeason || "Select a season"}
+        value={selectedSeason || 'Select a season'}
         placeholder="Select an option"
       />
       <Episodes episodes={episodes} />
